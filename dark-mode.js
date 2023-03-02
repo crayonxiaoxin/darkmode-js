@@ -1,6 +1,7 @@
 var DarkModeUtil = {
-    // classname
+    // 持久化 key
     Key: "theme-mode",
+    // classname，用于区分 css
     Clazz: "dark-mode",
     // 设置的模式
     Mode: {
@@ -19,16 +20,19 @@ var DarkModeUtil = {
         var mode = localStorage.getItem(DarkModeUtil.Key);
         return (mode == null || mode == "null" || mode == "") ? DarkModeUtil.Mode.system : mode;
     },
+    // 是否白天模式
     isLightMode: function () {
         return DarkModeUtil.currentMode() == DarkModeUtil.Mode.light;
     },
+    // 是否暗黑模式
     isDarkMode: function () {
         return DarkModeUtil.currentMode() == DarkModeUtil.Mode.dark;
     },
+    // 是否跟随系统
     isSystemMode: function () {
         return !isLightMode() && !isDarkMode();
     },
-    // 设置模式
+    // 设置模式，持久化
     setMode: function (mode) {
         localStorage.setItem(DarkModeUtil.Key, mode);
         if (DarkModeUtil.isDarkMode()) {
@@ -62,7 +66,7 @@ var DarkModeUtil = {
     toggle: function () {
         DarkModeUtil.setDarkModeTheme(!DarkModeUtil.isDarkThemeSet());
     },
-    // addEventListener('change',callback)
+    // 默认监听回调，addEventListener('change',callback)
     eventCallback: function (event) {
         DarkModeUtil.setDarkModeTheme(event.matches);
     },
@@ -80,7 +84,7 @@ var DarkModeUtil = {
         DarkModeUtil.node.addEventListener('change', DarkModeUtil.eventCallback);
     },
     init: function () {
-        // 初始化时，处于那种模式
+        // 初始化时，处于哪种模式
         DarkModeUtil.setMode(DarkModeUtil.currentMode());
     }
 }

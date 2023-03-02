@@ -28,4 +28,4 @@
 </script>
 ```
 
-[示例](https://crayonxiaoxin.github.io/darkmode-js/)
+[查看示例](https://crayonxiaoxin.github.io/darkmode-js/)
