@@ -15,14 +15,16 @@
 <script>
     // 初始化
     $(document).ready(function () {
-        var mode = DarkModeUtil.currentMode();
         DarkModeUtil.init();
+        // ...此处可以为元素设置默认值
     });
 
     // 手动设置模式：system/dark/light
     function onModeChange() {
+        // 获取值
         var mode = $("#theme-mode").val();
         console.log(mode);
+        // 设置
         DarkModeUtil.setMode(mode);
     }
 </script>
