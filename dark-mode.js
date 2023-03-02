@@ -16,7 +16,8 @@ var DarkModeUtil = {
     },
     // 当前设置的模式
     currentMode: function () {
-        return localStorage.getItem(DarkModeUtil.Key);
+        var mode = localStorage.getItem(DarkModeUtil.Key);
+        return (mode == null || mode == "null" || mode == "") ? DarkModeUtil.Mode.system : mode;
     },
     isLightMode: function () {
         return DarkModeUtil.currentMode() == DarkModeUtil.Mode.light;

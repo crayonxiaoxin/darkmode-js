@@ -4,12 +4,12 @@
 ### 使用方法
 
 引入
-```
+``` html
 <script src="dark-mode.js"></script>
 ```
 
 根据当前设置的模式设置主题
-```
+``` html
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <script>
@@ -27,3 +27,5 @@
     }
 </script>
 ```
+
+[示例](https://crayonxiaoxin.github.io/darkmode-js/)

@@ -41,8 +41,8 @@
         $(document).ready(function () {
             var mode = DarkModeUtil.currentMode();
             console.log(mode);
-            $("#theme-mode").val(mode);
             DarkModeUtil.init();
+            $("#theme-mode").val(mode);
         });
 
         function onModeChange() {
