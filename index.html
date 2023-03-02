@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            transition: all 0.1s ease-in-out;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000;
+            width: 100%;
+            height: 100%;
+        }
+
+        body.dark-mode {
+            background-color: #666;
+            color: #fff;
+        }
+
+        .hello {
+            width: 300px;
+            height: 50px;
+            border: 1px solid #000;
+            color: red;
+        }
+
+        .dark-mode .hello {
+            color: purple;
+            border: 1px solid #fff;
+        }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="dark-mode.js"></script>
+    <script>
+        $(document).ready(function () {
+            var mode = DarkModeUtil.currentMode();
+            console.log(mode);
+            $("#theme-mode").val(mode);
+            DarkModeUtil.init();
+        });
+
+        function onModeChange() {
+            var mode = $("#theme-mode").val();
+            console.log(mode);
+            DarkModeUtil.setMode(mode);
+        }
+    </script>
+</head>
+
+<body>
+    <select name="theme-mode" id="theme-mode" onchange="onModeChange()">
+        <option value="system">跟随系统</option>
+        <option value="light">白天模式</option>
+        <option value="dark">暗黑模式</option>
+    </select>
+    <ol>
+        <li>dark mode example</li>
+        <li>dark mode example</li>
+        <li>dark mode example</li>
+        <li>dark mode example</li>
+        <li>dark mode example</li>
+    </ol>
+    <div class="hello">hello world</div>
+</body>
+
+</html>
