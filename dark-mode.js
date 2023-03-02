@@ -1,3 +1,5 @@
+/*! DarkModeUtil v1.0.0 | https://github.com/crayonxiaoxin/darkmode-js */
+
 var DarkModeUtil = {
     // 持久化 key
     Key: "theme-mode",
