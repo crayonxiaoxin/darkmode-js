@@ -12,10 +12,10 @@ var DarkModeUtil = {
         dark: "dark",
     },
     // 监听的节点
-    node: window.matchMedia('(prefers-color-scheme: dark)'),
+    Node: window.matchMedia('(prefers-color-scheme: dark)'),
     // 系统是否处于暗黑模式
     isSystemDarkMode: function () {
-        return DarkModeUtil.node.matches;
+        return DarkModeUtil.Node.matches;
     },
     // 当前设置的模式
     currentMode: function () {
@@ -74,7 +74,7 @@ var DarkModeUtil = {
     },
     // 取消监听
     remove: function () {
-        DarkModeUtil.node.removeEventListener('change', DarkModeUtil.eventCallback);
+        DarkModeUtil.Node.removeEventListener('change', DarkModeUtil.eventCallback);
     },
     // 监听
     listen: function () {
@@ -83,7 +83,7 @@ var DarkModeUtil = {
         // 如果之前存在监听，先移除
         DarkModeUtil.remove();
         // 添加监听
-        DarkModeUtil.node.addEventListener('change', DarkModeUtil.eventCallback);
+        DarkModeUtil.Node.addEventListener('change', DarkModeUtil.eventCallback);
     },
     init: function () {
         // 初始化时，处于哪种模式
