@@ -1,4 +1,4 @@
-/*! DarkModeUtil v1.0.0 | https://github.com/crayonxiaoxin/darkmode-js */
+/*! DarkModeUtil v1.0.1 | https://github.com/crayonxiaoxin/darkmode-js */
 
 var DarkModeUtil = {
     // 持久化 key
@@ -32,7 +32,7 @@ var DarkModeUtil = {
     },
     // 是否跟随系统
     isSystemMode: function () {
-        return !isLightMode() && !isDarkMode();
+        return !DarkModeUtil.isLightMode() && !DarkModeUtil.isDarkMode();
     },
     // 设置模式，持久化
     setMode: function (mode) {
@@ -85,8 +85,12 @@ var DarkModeUtil = {
         // 添加监听
         DarkModeUtil.Node.addEventListener('change', DarkModeUtil.eventCallback);
     },
-    init: function () {
+    init: function (defaultMode = null) {
         // 初始化时，处于哪种模式
-        DarkModeUtil.setMode(DarkModeUtil.currentMode());
+        if (defaultMode == null) {
+            DarkModeUtil.setMode(DarkModeUtil.currentMode());
+        } else {
+            DarkModeUtil.setMode(defaultMode);
+        }
     }
 }
